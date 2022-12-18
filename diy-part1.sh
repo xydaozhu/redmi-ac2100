@@ -31,15 +31,15 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/jer
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 
 # Fix libssh
-pushd feeds/packages/libs
-rm -rf libssh
-svn co https://github.com/openwrt/packages/trunk/libs/libssh
-popd
+# vpushd feeds/packages/libs
+# rm -rf libssh
+# svn co https://github.com/openwrt/packages/trunk/libs/libssh
+# popd
 
 # Use snapshots syncthing package
-pushd feeds/packages/utils
-rm -rf syncthing
-svn co https://github.com/openwrt/packages/trunk/utils/syncthing
-popd
+# pushd feeds/packages/utils
+# rm -rf syncthing
+# svn co https://github.com/openwrt/packages/trunk/utils/syncthing
+# popd
 
 
