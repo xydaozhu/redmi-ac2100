@@ -66,14 +66,6 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
 
-        if [ -e $KM ]; then 
-        echo -n '查到: '
-        echo -n "$KM"
-        echo '  复制到/workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch'
-        cp -f $KM /workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch;
-          
-        fi 
-        
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: Update feeds
@@ -87,6 +79,15 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
+
+        if [ -e $KM ]; then 
+        echo -n '查到: '
+        echo -n "$KM"
+        echo '  复制到/workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch'
+        cp -f $KM /workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch;
+          
+        fi 
+                
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
