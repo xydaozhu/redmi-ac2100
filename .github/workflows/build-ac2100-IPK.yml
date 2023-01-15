@@ -27,6 +27,8 @@ env:
   CONFIG_FILE: .configIPK
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  KVR: hostapd.sh
+  KM: 102-mt7621-fix-cpu-clk-add-clkdev-1100M.patch  
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -76,6 +78,24 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        if [ -e $KVR ]; then
+        echo '查到hostapd.sh，复制到openwrt/package/network/services/hostapd/files/hostapd.sh'
+        cp -f $KVR openwrt/package/network/services/hostapd/files/hostapd.sh;
+          
+        fi
+        
+        if [ -e '/usr/bin/upx' ]; then
+        echo '查到/usr/bin/upx，复制到/workdir/openwrt/staging_dir/host/bin/upx'
+        cp /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/upx;
+          
+        fi
+        if [ -e $KM ]; then 
+        echo -n '查到: '
+        echo -n "$KM"
+        echo '  复制到/workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch'
+        cp -f $KM /workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch;
+          
+        fi          
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
