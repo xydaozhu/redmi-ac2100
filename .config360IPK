@@ -1,5 +1,5 @@
 #
-# Automatically generated file; Docker ipk DO NOT EDIT.
+# Automatically generated file; DO NOT EDIT.
 # OpenWrt Configuration
 #
 CONFIG_MODULES=y
@@ -52,19 +52,18 @@ CONFIG_TARGET_ipq60xx=y
 CONFIG_TARGET_ipq60xx_generic=y
 # CONFIG_TARGET_MULTI_PROFILE is not set
 # CONFIG_TARGET_ipq60xx_generic_DEVICE_cmiot_ax18 is not set
-# CONFIG_TARGET_ipq60xx_generic_DEVICE_linksys_mr7350 is not set
-CONFIG_TARGET_ipq60xx_generic_DEVICE_360_v6=y
+CONFIG_TARGET_ipq60xx_generic_DEVICE_linksys_mr7350=y
+# CONFIG_TARGET_ipq60xx_generic_DEVICE_360_v6 is not set
 # CONFIG_TARGET_ipq60xx_generic_DEVICE_zn_m2 is not set
 CONFIG_HAS_SUBTARGETS=y
 CONFIG_HAS_DEVICES=y
 CONFIG_TARGET_BOARD="ipq60xx"
 CONFIG_TARGET_SUBTARGET="generic"
-CONFIG_TARGET_PROFILE="DEVICE_360_v6"
+CONFIG_TARGET_PROFILE="DEVICE_linksys_mr7350"
 CONFIG_TARGET_ARCH_PACKAGES="aarch64_cortex-a53"
 CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"
 CONFIG_CPU_TYPE="cortex-a53"
 CONFIG_LINUX_5_15=y
-CONFIG_DEFAULT_ath11k-wifi-qihoo_v6=y
 CONFIG_DEFAULT_base-files=y
 CONFIG_DEFAULT_block-mount=y
 CONFIG_DEFAULT_busybox=y
@@ -87,6 +86,7 @@ CONFIG_DEFAULT_iptables-mod-tproxy=y
 CONFIG_DEFAULT_kmod-gpio-button-hotplug=y
 CONFIG_DEFAULT_kmod-ipt-raw=y
 CONFIG_DEFAULT_kmod-leds-gpio=y
+CONFIG_DEFAULT_kmod-leds-pca963x=y
 CONFIG_DEFAULT_kmod-nf-nathelper=y
 CONFIG_DEFAULT_kmod-nf-nathelper-extra=y
 CONFIG_DEFAULT_kmod-qca-nss-dp=y
@@ -4732,7 +4732,7 @@ CONFIG_PACKAGE_luci-lib-ip=y
 CONFIG_PACKAGE_luci-lib-ipkg=y
 # CONFIG_PACKAGE_luci-lib-iptparser is not set
 # CONFIG_PACKAGE_luci-lib-jquery-1-4 is not set
-# CONFIG_PACKAGE_luci-lib-json is not set
+CONFIG_PACKAGE_luci-lib-json=y
 CONFIG_PACKAGE_luci-lib-jsonc=y
 # CONFIG_PACKAGE_luci-lib-luaneightbl is not set
 CONFIG_PACKAGE_luci-lib-nixio=y
