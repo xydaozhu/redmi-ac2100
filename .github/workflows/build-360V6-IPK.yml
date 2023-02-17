@@ -20,7 +20,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+#  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/zfgeng/openwrt-gl-ax1800
   REPO_BRANCH: 20220716
 # openwrt-21.02
   FEEDS_CONF: feeds.conf.default
