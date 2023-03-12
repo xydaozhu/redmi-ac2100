@@ -26,7 +26,8 @@ env:
   REPO_BRANCH: main  
 # openwrt-21.02
   FEEDS_CONF: feeds.conf.default.bak
-  CONFIG_FILE: .configIPK
+#  CONFIG_FILE: .configIPK
+  CONFIG_FILE: zn-m2.config  
   DIY_P1_SH: diy-partAX5-1.sh
   DIY_P2_SH: diy-partAX5-2.sh
   KVR: hostapd.sh
