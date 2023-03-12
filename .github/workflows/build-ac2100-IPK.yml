@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build AC2100IPK
+name: Build M2-AC2100IPK
 
 on:
   repository_dispatch:
@@ -20,10 +20,12 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/zfgeng/openwrt-gl-ax1800
-  REPO_BRANCH: master
+#  REPO_URL: https://github.com/zfgeng/openwrt-gl-ax1800
+#  REPO_BRANCH: master
+  REPO_URL: https://github.com/BaeKey/ipq6000.git
+  REPO_BRANCH: main  
 # openwrt-21.02
-  FEEDS_CONF: feeds.conf.default
+  FEEDS_CONF: feeds.conf.default.bak
   CONFIG_FILE: .configIPK
   DIY_P1_SH: diy-partAX5-1.sh
   DIY_P2_SH: diy-partAX5-2.sh
