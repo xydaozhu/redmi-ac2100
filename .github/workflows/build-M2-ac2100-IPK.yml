@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/BaeKey/ipq6000.git
   REPO_BRANCH: main  
 # openwrt-21.02
-  FEEDS_CONF: feeds.conf.default.bak
+  FEEDS_CONF: feeds.conf.default
 #  CONFIG_FILE: .configIPK
   CONFIG_FILE: zn-m2.config  
   DIY_P1_SH: diy-partAX5-1.sh
