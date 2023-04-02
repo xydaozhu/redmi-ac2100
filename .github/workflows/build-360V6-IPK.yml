@@ -28,6 +28,7 @@ env:
   CONFIG_FILE: .config360IPK
   DIY_P1_SH: diy-partAX5-1.sh
   DIY_P2_SH: diy-partAX5-2.sh
+  IFCompile: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -100,6 +101,7 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
     - name: Compile the firmware
       id: compile
+      if: env.IFCompile == 'true' && !cancelled()
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
