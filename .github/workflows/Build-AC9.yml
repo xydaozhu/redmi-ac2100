@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build R7800
+name: Build AC9-IPK
 
 on:
   repository_dispatch:
