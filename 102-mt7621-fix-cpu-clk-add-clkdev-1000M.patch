@@ -226,3 +226,4 @@
 +#define MT7621_CLK_MAX		2
 +
 +#endif /* __DT_BINDINGS_MT7621_CLK_H */
+  
