@@ -28,6 +28,8 @@ env:
   DIY_P1_SH: No-ssr-diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   KM: 102-mt7621-fix-cpu-clk-add-clkdev-1000M.patch
+  K1: openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+  K2: /workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -82,7 +84,16 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-
+        
+        if [ -e $K1 ]; then 
+        echo -n '查到: '
+        echo -n "$K1"
+        fi
+        if [ -e $K2 ]; then 
+        echo -n '查到: '
+        echo -n "$K2"
+        fi
+        
         if [ -e $KM ]; then 
         echo -n '查到: '
         echo -n "$KM"
