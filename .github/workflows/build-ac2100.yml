@@ -71,6 +71,8 @@ jobs:
         fi
         cd openwrt
         if [ -e $DIY_P1_SH ]; then
+        echo -n '运行: '
+        echo -n "$DIY_P1_SH"
         $GITHUB_WORKSPACE/$DIY_P1_SH
         fi
     - name: Update feeds
@@ -103,6 +105,8 @@ jobs:
         fi 
                 
         cd openwrt
+        echo -n '运行: '
+        echo -n "$DIY_P2_SH"        
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: SSH connection to Actions
