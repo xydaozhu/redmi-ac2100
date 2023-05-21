@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: .configTV
   DIY_P1_SH: No-ssr-diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  KM: 102-mt7621-fix-cpu-clk-add-clkdev-1100M.patch
+  KM: 102-mt7621-fix-cpu-clk-add-clkdev-1000M.patch
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -86,8 +86,8 @@ jobs:
         if [ -e $KM ]; then 
         echo -n '查到: '
         echo -n "$KM"
-        echo '  复制到/workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch'
-        cp -f $KM /workdir/openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch;
+        echo '  复制到 openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch'
+        cp -f $KM openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch;
           
         fi 
                 
