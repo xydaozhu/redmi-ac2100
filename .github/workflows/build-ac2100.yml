@@ -230,14 +230,14 @@ jobs:
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |
         curl -sL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+        ./transfer wet  ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
     - name: Upload openwrt.tar.gzaa to WeTransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: | 
         curl -sL git.io/file-transfer | sh
-        ./transfer wet --block 2621440 -s -p 64 --no-progress /workdir/openwrt.tar.gzaa 2>&1 | tee wetransfer.log
+        ./transfer wet  /workdir/openwrt.tar.gzaa 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
         
@@ -245,7 +245,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |  
         curl -sL git.io/file-transfer | sh
-        ./transfer wet --block 2621440 -s -p 64 --no-progress /workdir/openwrt.tar.gzab 2>&1 | tee wetransfer.log
+        ./transfer wet  /workdir/openwrt.tar.gzab 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"  
         
@@ -254,7 +254,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |  
         curl -sL git.io/file-transfer | sh
-        ./transfer wet --block 2621440 -s -p 64 --no-progress /workdir/openwrt.tar.gzac 2>&1 | tee wetransfer.log
+        ./transfer wet  /workdir/openwrt.tar.gzac 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
     - name: Upload openwrt.tar.gzad to wetransfer
