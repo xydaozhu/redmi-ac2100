@@ -21,9 +21,9 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/xydaozhu/coolsnowwolf-lede
+#  REPO_URL: https://github.com/xydaozhu/coolsnowwolf-lede
 #  REPO_URL: https://github.com/dhcn2000/coolsnowwolf-lede
-#  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .configTV
