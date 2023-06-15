@@ -27,7 +27,8 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .configTV
-  DIY_P1_SH: No-ssr-diy-part1.sh
+#  DIY_P1_SH: No-ssr-diy-part1.sh
+  DIY_P1_SH: diy-part1.sh  
   DIY_P2_SH: diy-part2.sh
   KM: 102-mt7621-fix-cpu-clk-add-clkdev-1000M.patch
   K1: openwrt/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
